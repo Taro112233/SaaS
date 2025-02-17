@@ -3,7 +3,7 @@ import Logo from '@/public/logo.png';
 import Image from 'next/image';
 import { Button, buttonVariants } from '../ui/button';
 import { ThemeToggle } from './ThemeToggle';
-import { auth, signOut } from '@/app/utils/auth';
+import { auth, signOut } from '@/auth';
 
 export async function Navbar() {
     const session = await auth()

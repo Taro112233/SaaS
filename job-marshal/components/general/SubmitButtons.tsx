@@ -24,24 +24,25 @@ interface GeneralSubmitButtonProps {
 
 export function GeneralSubmitButton({
     text,
-    variant,
-    width,
+    variant = "default", // Provide a default variant
+    width = "", // Provide a default width
     icon
 }: GeneralSubmitButtonProps) {
     const { pending } = useFormStatus();
 
-    return (<Button variant={variant} className={width}>
-        {pending ? (
-            <>
-                <Loader2 className="size-4 animate-spin" />
-                <span>Submitting...</span>
-            </>
-        ) : (
-            <>
-            {icon && <div>{icon}</div>}
-                <span>{text}</span>
-            </>
-        )}
-    </Button>
+    return (
+        <Button variant={variant} className={width} disabled={pending}>
+            {pending ? (
+                <>
+                    <Loader2 className="size-4 animate-spin" />
+                    <span>Submitting...</span>
+                </>
+            ) : (
+                <>
+                    {icon && <div className="mr-2">{icon}</div>}
+                    <span>{text}</span>
+                </>
+            )}
+        </Button>
     );
 }

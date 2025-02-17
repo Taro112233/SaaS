@@ -1,5 +1,5 @@
 
-import { auth, signIn } from "@/app/utils/auth";
+import { auth, signIn } from "@/auth";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
